@@ -1,4 +1,185 @@
+jar file -> boot -> jsp -> enable 
 
-@Autowired
-JdbcTemplate  : this is to create the object using singleton desgin pattern
+tomcat embeded jasper + maven 
+
+----------------------------------------------------------------------
+
+jsp -> webapp -> 
+
+to add jsp we need webapp folder 
+		create webapp folder! 
+src->main->		
+	webapp 
+	
+------------------------------------------------------
+src main ->
+			1) java    {java-code class logic db } 
+			2) resources { css js images properties  } 
+			3) webapp  {web browser : jsp , htlm }  
+-------------------------------------------------------
+create folders -> 
+	src->main->java->com 
+						controller 
+						dao 
+						bean
+						util
+						
+--------------------------------------------------------
+create jsp welcome -> run 
+--------------------------------------------------------
+configuration -> application.properties {boot}
+		server.port 
+--------------------------------------------------------
+
+adv java -> controller -> servlet ->
+			class extends HttpServlet 
+			service()
+			@WebServelt / web.xml 
+			1 controller : 1 feature 
+			
+			LoginController : 
+			SignupController :
+			ForgetPasswordController : 
+			
+
+
+spring -> controller -> 
+				class : @Controller    
+				feature wise method 
+				method -> url 
+				
+				public	String	login():url /login 
+				public	String	signup():url /signup 
+				public	String	forgetPassword():url /fp 
+
+				return type -> jsp page name ->  
+------------------------------------------------------------
+
+
+input -> jsp 
+
+process -> controller 
+
+dao -> query 
+
+? 
+M : data {bean,dao}
+V : input output 
+C : logic  
+
+filter 
+validators
+service 
+
+MVVM ->  
+---------------------------------------------
+
+
+validation -> 
+
+		1) front-end : JS : browser  
+		2) back-end  : java : server-side 
+
+
+
+----------------------------------------------------------
+1) github.com -> login { signup }
+2) git tools -> 
+
+
+git 
+github 
+local repo
+remote repo 
+
+push  : upload
+pull  : download 
+
+
+
+git status 
+
+git add pom.xml 
+git add src
+
+
+git add pom.xml src 
+
+git commit -m "init" src pom.xml 
+  
+
+git push origin master 
+git push origin main 
+git push -u origin main
+
+--------------------------------------------------------
+
+oracle/mysql/pg
+
+
+mysql -> XAMP  
+
+
+query -> 
+
+---------------------------------------------------------
+
+spring application -> mysql db -> connection 
+
+steps for database connection:- 
+
+step 1:
+
+1) mysql-connector {maven}    
+2) spring jdbc 	   {maven}
+
+
+step 2: 
+	map your configuration into application.properties 
+	1) url:dbName
+	2) userName
+	3) password   
+
+	jdbc:mysql://localhost:3306/springmix
+	root
+	root
+
+
+
+
+#database
+spring.datasource.url=jdbc:mysql://localhost:3306/springmix
+spring.datasource.username=root
+spring.datasource.password=root
+
+create database springmix; 
+
+------------------------------------------------------------
+
+Connection 
+PreparedStatement pstmt -> 
+				executeQuery() -> SELECT 
+				executeUpdate()-> INSERT,UPDATE,DELETE 
+					
+
+JdbcTemplate pstmt; //new ??
+
+
+
+
+@Autowired 
+JdbcTemplate pstmt; 
+				query() -> SELECT 
+				update()-> INSERT,UPDATE,DELETE 
+				queryXXX();
+
+
+--------------------------------------------------------------
+
+where we can write database query -> dao 
+
+what is the full name of DAO -> data access object 
+
+----------------------------------------------------------------------
+
 
