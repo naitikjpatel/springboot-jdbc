@@ -1,0 +1,4 @@
+
+@Autowired
+JdbcTemplate  : this is to create the object using singleton desgin pattern
+
