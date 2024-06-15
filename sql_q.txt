@@ -1,0 +1,20 @@
+
+use springmix; 
+
+create table users (
+	userId integer primary key auto_increment,
+	firstName varchar(30),
+	email varchar(30),
+	password varchar(255)
+
+);
+
+
+show tables; 
+
+
+desc users;
+
+
+insert into users(firstName,email,password) values ('rock','rock@gmail.com','rock123');
+

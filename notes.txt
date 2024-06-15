@@ -182,4 +182,12 @@ what is the full name of DAO -> data access object
 
 ----------------------------------------------------------------------
 
+1) table : users : pk : columns {fn em password }
 
+2) bean  : UserBean 
+
+3) dao : UserDao
+
+4) controller : UserController   
+
+-------------------------------------------------------------
