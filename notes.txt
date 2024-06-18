@@ -191,3 +191,62 @@ what is the full name of DAO -> data access object
 4) controller : UserController   
 
 -------------------------------------------------------------
+
+Date : 18/06/24
+
+-------------------------------------------------------------
+
+1) pom.xml ->
+	mysql-connector.jar
+	spring data jdbc 
+	
+2) application.properties 
+		url
+		username
+		password 
+		
+		
+JdbcTemplate -> @Autowired 
+		update() // insert update delete 
+		query()//select -> * 0 or many 
+		queryForObject()//select -> one 
+----------------------------------------------------------------		
+
+products -> 
+		create table 
+		
+		bean : ProductBean -> coumns:variable 
+					private -> getters and setters 
+					
+		JSp open controller method 
+		dao 		
+ 
+-------------------------------------------------------------------		
+
+
+
+ create table products(
+ 	productId integer primary key auto_increment,
+ 	productName varchar(30),
+ 	category varchar(30),
+ 	qty int,
+ 	price float
+ );
+ 
+ 
+ create product bean -> inside bean folder 
+ 
+ ui => jsp -> 
+ 
+ 	NewProduct.jsp -> form -> 
+ 	
+ controller -> create -> method ->url ->to open the jsp 
+ ->input ->submit -> 
+controller- > post mapping -> return -> success . f 
+  
+create dao - ProductDao -> create addProduct() 
+
+call dao's method from controller 
+
+
+----------------------------------------------------------------
