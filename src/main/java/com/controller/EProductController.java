@@ -59,4 +59,11 @@ public class EProductController {
 		dao.deleteProduct(productId);
 		return "redirect:/products";
 	}
+	
+	@GetMapping("/updateproduct")
+	public String updateProduct(@RequestParam("productId") Integer productId, @RequestParam("productName") String name,@RequestParam("category") String category,@RequestParam("qty") Integer qty,@RequestParam("price") Float price) {
+		System.out.println(productId+" "+name+" "+category+" "+qty+" "+price);
+		
+		return "redirect:products";
+	}
 }
