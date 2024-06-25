@@ -61,9 +61,22 @@ public class EProductController {
 	}
 	
 	@GetMapping("/updateproduct")
-	public String updateProduct(@RequestParam("productId") Integer productId, @RequestParam("productName") String name,@RequestParam("category") String category,@RequestParam("qty") Integer qty,@RequestParam("price") Float price) {
+	public String updateProduct(@RequestParam("productId") Integer productId, @RequestParam("productName") String name,@RequestParam("category") String category,@RequestParam("qty") Integer qty,@RequestParam("price") Float price,Model model) {
 		System.out.println(productId+" "+name+" "+category+" "+qty+" "+price);
-		
-		return "redirect:products";
+		model.addAttribute("productId",productId);
+		model.addAttribute("productName",name);
+		model.addAttribute("category",category);
+		model.addAttribute("qty",qty);
+		model.addAttribute("price",price);
+//		return "redirect:products";
+		return "UpdateData";
+
+	}
+	
+	
+	@PostMapping("/saveUpdatedData")
+	public String saveUpdatedData(EProductBean bean) {
+		dao.updateProduct(bean);
+		return "redirect:/products";
 	}
 }

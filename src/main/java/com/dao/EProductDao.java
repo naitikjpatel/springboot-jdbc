@@ -30,4 +30,13 @@ public class EProductDao {
 	public void deleteProduct(Integer productId) {
 		stmt.update("delete from products where productId = ?",productId);
 	}
+	
+	public void updateProduct(EProductBean bean) {
+		System.out.println(bean.getProductName());
+		System.out.println(bean.getCategory());
+		System.out.println(bean.getPrice());
+		System.out.println(bean.getQty());
+		System.out.println(bean.getProductId());
+		stmt.update("update products set productName=?,category=?,qty=?,price =?  where productId=? ",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice(),bean.getProductId());
+	}
 }
