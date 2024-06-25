@@ -60,6 +60,22 @@ public class EProductController {
 		return "redirect:/products";
 	}
 	
+	
+	@GetMapping("/deletewithname")
+	public String deleteWithName() {
+		return "EcomDeleteWithName";
+	}
+	
+	@PostMapping("/deleteDataName")
+	public String deleteData(EProductBean bean) {
+		dao.deleteByName(bean.getProductName());
+		return "redirect:/products";
+	}
+	
+	
+	
+	
+	
 	@GetMapping("/updateproduct")  //EcomListProduct thi aa url call thay che : url rewrtting thi data leshu tene jsp par moklishu
 	public String updateProduct(@RequestParam("productId") Integer productId, @RequestParam("productName") String name,@RequestParam("category") String category,@RequestParam("qty") Integer qty,@RequestParam("price") Float price,Model model) {
 		System.out.println(productId+" "+name+" "+category+" "+qty+" "+price);
@@ -79,4 +95,6 @@ public class EProductController {
 		dao.updateProduct(bean);
 		return "redirect:/products";
 	}
+	
+	
 }

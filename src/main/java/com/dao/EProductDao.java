@@ -39,4 +39,8 @@ public class EProductDao {
 		System.out.println(bean.getProductId());
 		stmt.update("update products set productName=?,category=?,qty=?,price =?  where productId=? ",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice(),bean.getProductId());
 	}
+	
+	public void deleteByName(String productName) {
+		stmt.update("delete from products where productName =?",productName);
+	}
 }
