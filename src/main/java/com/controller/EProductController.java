@@ -97,4 +97,13 @@ public class EProductController {
 	}
 	
 	
+	@GetMapping("/viewproduct")
+	public String getViewProduct(@RequestParam("productId") Integer productId,Model model) {
+		
+		EProductBean productBean=dao.getProductById(productId);
+		model.addAttribute("product",productBean);
+		return "ViewProduct";
+	}
+	
+	
 }
