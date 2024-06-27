@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bean.EProductBean;
 import com.dao.EProductDao;
@@ -26,7 +27,7 @@ public class EProductController {
 	}
 	
 	@PostMapping("/saveproduct")
-	public String saveProduct(EProductBean bean) {
+	public String saveProduct(EProductBean bean,@RequestParam("masterImage") MultipartFile masterImage) {
 		// using bean read data ->productBean
 
 		// validation using XX
@@ -39,6 +40,11 @@ public class EProductController {
 		 * Default: defaul return value is count as a JSP file
 		 * If we want to return the url then we need to write like : redirect:/urlname
 		 */
+		
+//		Printing the image details
+		System.out.println(masterImage.getOriginalFilename());
+		
+		
 		
 //		return "Welcome";
 		return "redirect:/products";
