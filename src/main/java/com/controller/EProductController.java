@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.FileUploadService;
 import com.bean.EProductBean;
 import com.dao.EProductDao;
 
@@ -20,6 +21,8 @@ public class EProductController {
 	@Autowired
 	EProductDao dao;
 	
+	@Autowired
+	FileUploadService fileUploadService;
 	
 	@GetMapping("/newproduct")
 	public String newProduct() {
@@ -42,8 +45,10 @@ public class EProductController {
 		 */
 		
 //		Printing the image details
-		System.out.println(masterImage.getOriginalFilename());
+//		System.out.println(masterImage.getOriginalFilename());
 		
+		//upload file into the folder
+		fileUploadService.uploadProductImage(masterImage);
 		
 		
 //		return "Welcome";
