@@ -1,5 +1,6 @@
 package com.controller;
 
+import java.awt.Image;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +36,6 @@ public class EProductController {
 
 		// validation using XX
 
-		// dao insert
-		dao.addProduct(bean);
-		
 		/*
 		 * In retunrn method we can return a jsp file and also we can return the url
 		 * Default: defaul return value is count as a JSP file
@@ -51,6 +49,15 @@ public class EProductController {
 		fileUploadService.uploadProductImage(masterImage);
 		
 		
+		String path="http://localhost:9999/images/products/";
+		String imgName=masterImage.getOriginalFilename();
+		
+		String imgSrc=path+imgName;
+		// dao insert
+		dao.addProduct(bean,imgSrc);
+		
+		
+		
 //		return "Welcome";
 		return "redirect:/products";
 	}
@@ -61,6 +68,7 @@ public class EProductController {
 		//call method : getAllProducts
 		List<EProductBean> products=dao.getAllProducts();
 		model.addAttribute("products",products);
+		
 		return "EcomListProducts";
 	}
 	
@@ -113,6 +121,8 @@ public class EProductController {
 		
 		EProductBean productBean=dao.getProductById(productId);
 		model.addAttribute("product",productBean);
+		String imgSrc=dao.getImgSrc(productId);
+		model.addAttribute("imgSrc",imgSrc);
 		return "ViewProduct";
 	}
 	

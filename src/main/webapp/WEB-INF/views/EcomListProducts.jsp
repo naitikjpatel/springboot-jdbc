@@ -30,6 +30,7 @@
 <%
 for(EProductBean p:products){
 	out.print("<tr>");
+	//out.print("<td>" + p.getProductId() + "</td><td>" + p.getProductName() + "</td><td><a href='deleteproduct?productId="+p.getProductId()+"'>Delete</a> | <a href='viewproduct?productId="+p.getProductId()+"&imgSrc="+imgSrc+"'>View</a></td> <td><a href='updateproduct?productId="+p.getProductId()+"&productName="+p.getProductName()+"&category="+p.getCategory()+"&qty="+p.getQty()+"&price="+p.getPrice()+"'>Update</a>");
 	out.print("<td>" + p.getProductId() + "</td><td>" + p.getProductName() + "</td><td><a href='deleteproduct?productId="+p.getProductId()+"'>Delete</a> | <a href='viewproduct?productId="+p.getProductId()+"'>View</a></td> <td><a href='updateproduct?productId="+p.getProductId()+"&productName="+p.getProductName()+"&category="+p.getCategory()+"&qty="+p.getQty()+"&price="+p.getPrice()+"'>Update</a>");
 	out.print("</tr>");
 }

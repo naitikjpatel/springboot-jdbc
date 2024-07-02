@@ -21,6 +21,10 @@ public class EProductDao {
 		stmt.update("insert into products (productName,category,qty,price) values (?,?,?,?)",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice());
 	}
 	
+	public void addProduct(EProductBean bean,String imgSrc) {
+		stmt.update("insert into products (productName,category,qty,price,imgSrc) values (?,?,?,?,?)",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice(),imgSrc);
+	}
+	
 	public List<EProductBean> getAllProducts() {
 																//BeanPropertyRowMapper e nava bean banavi jashe for every row mate
 		List<EProductBean> list= stmt.query("select * from products", new BeanPropertyRowMapper<EProductBean>(EProductBean.class));
@@ -48,5 +52,9 @@ public class EProductDao {
 		EProductBean bean=stmt.queryForObject("select * from products where productId =?",new BeanPropertyRowMapper<>(EProductBean.class),new Object[] {productId});
 		
 		return bean;
+	}
+	public String getImgSrc(Integer productId) {
+		String imgsrc=stmt.queryForObject("select imgsrc from products where productId=?",new Object[] {productId }, String.class);
+		return imgsrc;
 	}
 }

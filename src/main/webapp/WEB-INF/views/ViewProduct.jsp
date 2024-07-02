@@ -12,6 +12,8 @@
 	ProductName is  : ${product.getProductName() }  <br><br> 
 	Product Category is :${product.getCategory() } <br><br>
 	Product Price is : ${product.getPrice() } <br><br>
-	Product Qty is : ${product.getQty() }
+	Product Qty is : ${product.getQty() } <br><br/>
+	Path :${imgSrc } <br/><br/>
+	Product Img is : <img src="${imgSrc}" alt="image"/>
 </body>
 </html>
