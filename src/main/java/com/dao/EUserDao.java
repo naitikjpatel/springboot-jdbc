@@ -25,7 +25,7 @@ public class EUserDao {
 	public void insertUser(EUserBean userBean) {
 		
 		
-		stmt.update("insert into users (firstName,email,password) values (?,?,?)",userBean.getFirstName(),userBean.getEmail(),userBean.getPassword());
+		stmt.update("insert into users (firstName,email,password,profilePic) values (?,?,?,?)",userBean.getFirstName(),userBean.getEmail(),userBean.getPassword(),userBean.getProfilePicPath());
 		
 	}
 	

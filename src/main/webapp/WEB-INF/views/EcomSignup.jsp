@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<form action="esignup" method="post">
+<form action="esignup" method="post"  enctype="multipart/form-data" >
 FirstName: <input type="text" name="firstName"/> <br/> <br/> 
 Email:		<input type="text" name="email"/><br/> <br/>
 Password: 	<input type="text" name="password"/><br/> <br/>
-
+Profile Img: <input type="file" name="profilePic"> <br/> <br/>
 <input type="submit" value="SUBMIT"/> 
 </form>
 </body>

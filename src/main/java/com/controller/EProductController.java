@@ -1,6 +1,6 @@
 package com.controller;
 
-import java.awt.Image;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.FileUploadService;
+import com.service.FileUploadService;
 import com.bean.EProductBean;
 import com.dao.EProductDao;
 
@@ -24,6 +24,13 @@ public class EProductController {
 	
 	@Autowired
 	FileUploadService fileUploadService;
+	
+	
+	
+	@GetMapping("/")
+	public String welcome() {
+		return "EcomLogin";
+	}
 	
 	@GetMapping("/newproduct")
 	public String newProduct() {
