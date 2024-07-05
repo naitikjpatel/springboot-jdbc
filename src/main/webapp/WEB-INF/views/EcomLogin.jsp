@@ -8,7 +8,17 @@
 </head>
 <body>
 
-<h2>Record Inserted Successfully,</h2>
+
 <h3>Welcome to login page</h3>
+<form action="elogin" method="post">
+	<input type="email" name="email" placeholder="Enter the Email id"/><br><br>
+	<input type="password" name="password" placeholder="Enter the password"/> <br/> <br/>
+	<input type="submit" value="submit"/>
+	
+	
+</form>
+
+<br/>
+${error }
 </body>
 </html>

@@ -26,11 +26,11 @@ public class EProductController {
 	FileUploadService fileUploadService;
 	
 	
-	
-	@GetMapping("/")
-	public String welcome() {
-		return "EcomLogin";
-	}
+//	
+//	@GetMapping("/")
+//	public String welcome() {
+//		return "EcomLogin";
+//	}
 	
 	@GetMapping("/newproduct")
 	public String newProduct() {

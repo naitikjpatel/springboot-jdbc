@@ -1,6 +1,7 @@
 package com.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -25,10 +26,31 @@ public class EUserDao {
 	public void insertUser(EUserBean userBean) {
 		
 		
-		stmt.update("insert into users (firstName,email,password,profilePic) values (?,?,?,?)",userBean.getFirstName(),userBean.getEmail(),userBean.getPassword(),userBean.getProfilePicPath());
+		stmt.update("insert into users (firstName,email,password,profilePicPath) values (?,?,?,?)",userBean.getFirstName(),userBean.getEmail(),userBean.getPassword(),userBean.getProfilePicPath());
 		
 	}
 	
+	// int
+		// boolean
+		// EuserBean
+		// welcome , Ram
+		// addTocart userId
+
+	public EUserBean authenticate(String email,String password) {
+		// query -> select * -> 1+ -> n
+		// queryForObject -> select -> 1 record { 0 1+ throw exception}
+		// update -> insert update delete
+		
+		try {
+	EUserBean userBean=	stmt.queryForObject("select * from users where email=? and password=?",new BeanPropertyRowMapper<>(EUserBean.class),new Object[] {email,password});
+	return userBean;
+	
+		}catch(Exception e) {
+			e.getMessage();
+		}
+		
+		return null; //invalid
+	}
 	
 	
 	
