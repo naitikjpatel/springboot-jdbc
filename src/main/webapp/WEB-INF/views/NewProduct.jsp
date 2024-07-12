@@ -16,7 +16,7 @@
 	Category: <input type="text" name="category"/> <br><br>
 	Price: <input type="text" name=price /> <br><br>
 	Qty: <input type="text" name="qty"/> <br><br>
-	Master Image : <input type="file" name="masterImage"/> <br/> <br/>  
+	Master Image : <input type="file" name="imgSrc"/> <br/> <br/>  
 	<!-- image we can get using 2 ways : 1) using the bean and 2) using RequestParam -->
 	
 	<input type="submit" value="Add Product"/>

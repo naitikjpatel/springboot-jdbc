@@ -38,7 +38,7 @@ public class EProductController {
 	}
 	
 	@PostMapping("/saveproduct")
-	public String saveProduct(EProductBean bean,@RequestParam("masterImage") MultipartFile masterImage) {
+	public String saveProduct(EProductBean bean,@RequestParam("imgSrc") MultipartFile masterImage) {
 		// using bean read data ->productBean
 
 		// validation using XX

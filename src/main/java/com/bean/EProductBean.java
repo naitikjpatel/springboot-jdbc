@@ -1,5 +1,6 @@
 package com.bean;
 
+import org.springframework.web.multipart.MultipartFile;
 
 public class EProductBean {
 
@@ -8,6 +9,7 @@ public class EProductBean {
 	private String category;
 	private Float price;
 	private Integer qty;
+	MultipartFile imgSrc;
 	public Integer getProductId() {
 		return productId;
 	}
@@ -38,5 +40,13 @@ public class EProductBean {
 	public void setQty(Integer qty) {
 		this.qty = qty;
 	}
+	public MultipartFile getImgSrc() {
+		return imgSrc;
+	}
+	public void setImgSrc(MultipartFile imgSrc) {
+		this.imgSrc = imgSrc;
+	}
+	
+	
 		
 }

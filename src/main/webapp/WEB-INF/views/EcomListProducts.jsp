@@ -7,8 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
 </head>
 <body>
+
+
 <h2>List Products</h2>
 
 
@@ -35,6 +39,7 @@ for(EProductBean p:products){
 	out.print("</tr>");
 }
 %>
+
 
 </body>
 </html>
