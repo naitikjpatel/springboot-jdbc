@@ -21,8 +21,9 @@ public class EProductDao {
 		stmt.update("insert into products (productName,category,qty,price) values (?,?,?,?)",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice());
 	}
 	
-	public void addProduct(EProductBean bean,String imgSrc) {
-		stmt.update("insert into products (productName,category,qty,price,imgSrc) values (?,?,?,?,?)",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice(),imgSrc);
+	public void addProduct(EProductBean bean,String x) {
+//		System.out.println(bean);
+		stmt.update("insert into products (productName,category,qty,price,imgSrcPic) values (?,?,?,?,?)",bean.getProductName(),bean.getCategory(),bean.getQty(),bean.getPrice(),bean.getImgSrcPic());
 	}
 	
 	public List<EProductBean> getAllProducts() {

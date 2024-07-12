@@ -36,18 +36,18 @@ public class EProductController {
 	public String newProduct() {
 		return "NewProduct";
 	}
-	
+	/*
 	@PostMapping("/saveproduct")
 	public String saveProduct(EProductBean bean,@RequestParam("imgSrc") MultipartFile masterImage) {
 		// using bean read data ->productBean
 
 		// validation using XX
 
-		/*
+		
 		 * In retunrn method we can return a jsp file and also we can return the url
 		 * Default: defaul return value is count as a JSP file
 		 * If we want to return the url then we need to write like : redirect:/urlname
-		 */
+		
 		
 //		Printing the image details
 //		System.out.println(masterImage.getOriginalFilename());
@@ -68,6 +68,43 @@ public class EProductController {
 //		return "Welcome";
 		return "redirect:/products";
 	}
+	
+	*/
+	
+	@PostMapping("/saveproduct")
+	public String saveProduct(EProductBean bean) {
+		// using bean read data ->productBean
+
+		// validation using XX
+
+		/*
+		 * In retunrn method we can return a jsp file and also we can return the url
+		 * Default: defaul return value is count as a JSP file
+		 * If we want to return the url then we need to write like : redirect:/urlname
+		 */
+		
+//		Printing the image details
+//		System.out.println(masterImage.getOriginalFilename());
+		
+		//upload file into the folder
+		fileUploadService.uploadProductImage(bean.getProductImg());
+		
+		
+		String path="images/products/";
+		String imgName=bean.getProductImg().getOriginalFilename();
+		
+		String imgSrc=path+imgName;
+		bean.setImgSrcPic(imgSrc);
+		// dao insert
+		dao.addProduct(bean,""); //"" empty string em j pass kari che 
+		
+		
+		
+//		return "Welcome";
+		return "redirect:/products";
+	}
+	
+	
 	
 	@GetMapping("/products")
 	public String listProducts(Model model) {

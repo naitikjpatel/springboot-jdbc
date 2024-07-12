@@ -23,6 +23,7 @@ a:hover {
 
 .section-products {
     padding: 80px 0 54px;
+    
 }
 
 .section-products .header {
@@ -169,6 +170,30 @@ a:hover {
     background-color: #444444;
     transform: translateY(-50%);
 }
+.row{
+
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:30px;
+	flex: 30% 30% 30%;
+	overflow-x:hidden; 
+	flex-wrap: wrap;
+	margin: 0px 50px;
+
+}
+
+.product{
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 10px;
+	
+}
+.product a{
+display: flex;
+	justify-content: center;
+	align-items: center;}
 </style>
 
 </head>
@@ -198,19 +223,14 @@ a:hover {
 						<!-- start -->
 						<% for(EProductBean p: products){ %>
 						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-						<img src="<%=p.getImgSrc() %>" alt=""/>
+						<div class="col-md-6 col-lg-4 col-xl-3 product">
+					
 								<div id="product-1" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
+						<a href=""><img src="<%=p.getImgSrcPic() %>" alt=""/></a>					
 										<div class="part-2">
+												
 												<h3 class="product-title"><%=p.getProductName() %></h3>
+												<h4>Qty : <%=p.getQty() %></h4>
 												<h4 class="product-old-price"><%=p.getPrice()*0.5 + p.getPrice() %></h4>
 												<h4 class="product-price"><%=p.getPrice() %></h4>
 										</div>

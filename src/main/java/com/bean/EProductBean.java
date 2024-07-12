@@ -9,8 +9,10 @@ public class EProductBean {
 	private String category;
 	private Float price;
 	private Integer qty;
-	MultipartFile imgSrc;
+	private MultipartFile productImg; 
+	private String imgSrcPic;
 	public Integer getProductId() {
+		
 		return productId;
 	}
 	public void setProductId(Integer productId) {
@@ -40,13 +42,27 @@ public class EProductBean {
 	public void setQty(Integer qty) {
 		this.qty = qty;
 	}
-	public MultipartFile getImgSrc() {
-		return imgSrc;
+	public MultipartFile getProductImg() {
+		return productImg;
 	}
-	public void setImgSrc(MultipartFile imgSrc) {
-		this.imgSrc = imgSrc;
+	public void setProductImg(MultipartFile productImg) {
+		this.productImg = productImg;
+	}
+	public String getImgSrcPic() {
+		return imgSrcPic;
+	}
+	public void setImgSrcPic(String imgSrcPic) {
+		this.imgSrcPic = imgSrcPic;
+	}
+	@Override
+	public String toString() {
+		return "EProductBean [productId=" + productId + ", productName=" + productName + ", category=" + category
+				+ ", price=" + price + ", qty=" + qty + ", productImg=" + productImg + ", imgSrcPic=" + imgSrcPic + "]";
 	}
 	
 	
+	
+	
+
 		
 }
