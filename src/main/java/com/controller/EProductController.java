@@ -56,7 +56,7 @@ public class EProductController {
 		fileUploadService.uploadProductImage(masterImage);
 		
 		
-		String path="http://localhost:9999/images/products/";
+		String path="images/products/";
 		String imgName=masterImage.getOriginalFilename();
 		
 		String imgSrc=path+imgName;
