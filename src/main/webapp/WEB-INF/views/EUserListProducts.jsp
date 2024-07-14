@@ -1,3 +1,4 @@
+<%@page import="com.bean.EUserBean"%>
 <%@page import="com.bean.EProductBean"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -25,6 +26,7 @@
 body {
 	font-family: "Poppins", sans-serif;
 	color: #444444;
+	overflow-x:hidden; 
 }
 
 a, a:hover {
@@ -187,13 +189,17 @@ a, a:hover {
 
 	<%
 	List<EProductBean> products = (List<EProductBean>) request.getAttribute("products");
+	EUserBean user=(EUserBean)session.getAttribute("user");
 	%>
 
 
 	<div class="row">
-		<div class="col-md">
+		<div class="col-md d-flex justify-content-end gap-4">
 			
-			<a href="logout">Logout</a>
+			<a href="logout"  class="btn btn-primary">Logout</a>
+			
+			<a href="seeAllProduct?userId=<%=user.getUserId()%>" class=" p-2"><i class="fas fa-shopping-cart"></i></a>
+			
 
 		</div>
 	</div>
@@ -205,10 +211,11 @@ a, a:hover {
 					<div class="header">
 						<h3>Featured Product</h3>
 						<h2>Popular Products</h2>
+						
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row p-3">
 
 
 				<!-- start -->
@@ -216,17 +223,17 @@ a, a:hover {
 				for (EProductBean p : products) {
 				%>
 				<!-- Single Product -->
-				<div class="col-md-6 col-lg-4 col-xl-3">
+				<div class="col-md-6 col-lg-4 col-xl-3 border border-2 p-2">
 					<div id="product-1" class="single-product">
 						<div class="part-1">
 							<a href="userviewimage?productId=<%=p.getProductId()%>"> <img
-								src="<%=p.getImgSrcPic()%>" height="70%" width="70%" />
+								src="<%=p.getImgSrcPic()%>" height="100%" width="100%" />
 							</a>
 							<ul>
 								<li><a href="addtocart?productId=<%=p.getProductId()%>"><i
 										class="fas fa-shopping-cart"></i></a></li>
 								<li><a href="#"><i class="fas fa-heart"></i></a></li>
-								<li><a href="#"><i class="fas fa-eye"></i></a></li>
+								<li><a href="userviewimage?productId=<%=p.getProductId()%>"><i class="fas fa-eye"></i></a></li>
 							</ul>
 						</div>
 						<div class="part-2">

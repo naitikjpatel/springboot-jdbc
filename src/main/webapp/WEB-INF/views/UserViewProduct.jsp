@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 
@@ -13,17 +14,21 @@
 
 <div class="card container">
 <h1>Welcome to viewpage</h1>
+<div class="row mb-3"></div>
+<div class="d-flex flex-row mb-4">
   <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
-    <img src="${product.getImgSrcPic()}" class="img-fluid"/>
+    <img src="${product.getImgSrcPic()}" class="img"/>
     <a href="#!">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
     </a>
   </div>
   <div class="card-body">
-    <h5 class="card-title"> ${product.getProductName()</h5>
+    <h5 class="card-title"> ${product.getProductName()}</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
   </div>
+  </div>
+  <div class="row mb-3"></div>
 </div>
 
 
