@@ -54,6 +54,7 @@ public class EcomSessionController {
 		}
 		else {
 			httpSession.setAttribute("user", dbUser);
+			System.out.println(dbUser);
 			model.addAttribute("firstName",dbUser.getFirstName());
 			model.addAttribute("profilePicPath",dbUser.getProfilePicPath());
 			return "EcomHome";
@@ -88,5 +89,12 @@ public class EcomSessionController {
 	
 		
 		return "EcomLogin";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession httpSession) {
+		//here we invalidate the session
+		httpSession.invalidate();
+		return "redirect:/elogin";
 	}
 }

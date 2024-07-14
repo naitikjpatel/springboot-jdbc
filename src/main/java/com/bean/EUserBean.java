@@ -51,6 +51,11 @@ public class EUserBean {
 	public void setProfilePicPath(String profilePicPath) {
 		this.profilePicPath = profilePicPath;
 	}
+	@Override
+	public String toString() {
+		return "EUserBean [userId=" + userId + ", firstName=" + firstName + ", email=" + email + ", password="
+				+ password + ", profilePic=" + profilePic + ", profilePicPath=" + profilePicPath + "]";
+	}
 	
 	
 }

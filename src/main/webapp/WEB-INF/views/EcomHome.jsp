@@ -11,7 +11,9 @@
 <h2>Welcom , ${user.firstName} to Home page</h2><br/>
 <img alt="" src="${user.profilePicPath}" height="200px" width="200px">
 
+
 <br/>
-<a href="products">Go to List Product</a>
+<!-- <a href="products">Go to List Product</a> -->
+<a href="userproducts">Products </a>
 </body>
 </html>

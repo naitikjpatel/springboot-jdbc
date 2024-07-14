@@ -10,10 +10,10 @@
 <body>
 
 
-<div class="container-fluid">
-	
-<h3>Welcome to login page</h3>
 
+	
+
+<!-- 
 <form action="elogin" method="post">
 	<input type="email" name="email" placeholder="Enter the Email id"/><br><br>
 	<input type="password" name="password" placeholder="Enter the password"/> <br/> <br/>
@@ -21,9 +21,40 @@
 	
 	
 </form>
-</div>
+</div> -->
+<div class="container-fluid">
 
-<br/>
-${error }
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+
+				<h2>Ecom Login</h2>
+
+
+				<form action="elogin" method="post">
+					<div class="form-group">
+						Email: <input type="text" name="email" class="form-control" />
+					</div>
+
+					<div class="form-group">
+						Password: <input type="password" name="password"
+							class="form-control" />
+					</div>
+
+
+					<input type="submit" value="Login"  class="btn btn-success m-2" />
+
+				</form>
+				<br> 
+
+				<span class="text-danger">${error}</span>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
 </body>
 </html>
