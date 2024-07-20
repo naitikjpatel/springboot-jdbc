@@ -11,10 +11,12 @@
 
 
 
+<div class="container col-5">
+</div>
 
 <div class="card container">
 <h1>Welcome to viewpage</h1>
-<div class="row mb-3"></div>
+<div class="row mb-5"></div>
 <div class="d-flex flex-row mb-4">
   <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
     <img src="${product.getImgSrcPic()}" class="img"/>
@@ -25,7 +27,7 @@
   <div class="card-body">
     <h5 class="card-title"> ${product.getProductName()}</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+    <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Add To Cart</a>
   </div>
   </div>
   <div class="row mb-3"></div>

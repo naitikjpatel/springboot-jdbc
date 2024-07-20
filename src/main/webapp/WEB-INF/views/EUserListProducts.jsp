@@ -198,7 +198,7 @@ a, a:hover {
 			
 			<a href="logout"  class="btn btn-primary">Logout</a>
 			
-			<a href="seeAllProduct?userId=<%=user.getUserId()%>" class=" p-2"><i class="fas fa-shopping-cart"></i></a>
+			<a href="mycart" class=" p-2"><i class="fas fa-shopping-cart"></i></a>
 			
 
 		</div>
