@@ -131,7 +131,7 @@ steps for database connection:-
 step 1:
 
 1) mysql-connector {maven}    
-2) spring jdbc 	   {maven}
+2) spring jdbc dependancy 	   {maven}
 
 
 step 2: 
