@@ -6,6 +6,7 @@ public class ECartBean {
 	private Integer cartId;
 	private Integer productId;
 	private Integer userId;
+	private Integer qty;
 	public Integer getCartId() {
 		return cartId;
 	}
@@ -24,5 +25,12 @@ public class ECartBean {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
+	public Integer getQty() {
+		return qty;
+	}
+	public void setQty(Integer qty) {
+		this.qty = qty;
+	}
+	
 	
 }

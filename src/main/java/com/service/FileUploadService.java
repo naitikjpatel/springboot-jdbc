@@ -27,7 +27,7 @@ public class FileUploadService {
 			FileUtils.writeByteArrayToFile(file, b);
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generatedz catch block
 			e.printStackTrace();
 		}
 		
