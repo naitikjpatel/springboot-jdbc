@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bean.ECartBean;
 import com.bean.EProductBean;
+import com.bean.ProductCartBean;
 
 @Repository
 public class CartDao {
@@ -56,16 +57,46 @@ public class CartDao {
 		
 	}
 	
-	public List<EProductBean> mycart(Integer userId){
+	public 	List<ProductCartBean> mycart(Integer userId){
 		//select * from products join cart using (productId) where userId= 1;
-		List<EProductBean> products= stmt.query("select * from products join cart using (productid) where userId =?",new BeanPropertyRowMapper<>(EProductBean.class),new Object[] {userId});
+//		List<EProductBean> products= stmt.query("select * from products join cart using (productid) where userId =?",new BeanPropertyRowMapper<>(EProductBean.class),new Object[] {userId});
+		
+	List<ProductCartBean> products=	stmt.query(" select c.*,p.price,p.productName,p.imgSrcPic from products p join cart c using (productId) where userId= ?",
+					new BeanPropertyRowMapper<>(ProductCartBean.class), new Object[] { userId });
 		return products;
 	}
 	
-	public void removeItemFromCart(Integer productId,Integer userId) {
+	public void removeItemFromCart(Integer productId,Integer userId,Integer cartId) {
 	
-		stmt.update("delete from cart where productId=? and userId=?",new Object[] {productId,userId});
+		ECartBean bean=null;
+		
+		try {
+			bean=stmt.queryForObject("select * from cart where cartId=? and userId=?",new BeanPropertyRowMapper<>(ECartBean.class), new Object[] {cartId,userId});
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		if(bean.getQty()==1) {
+			stmt.update("delete from cart where cartId=? and userId=?",new Object[] {cartId,userId});
+			
+		}
+		else {
+			stmt.update("update cart set qty=? where cartId =? and userId=?",new Object[] {bean.getQty()-1,bean.getCartId(),userId});
+		}
+		
+		
+		
+		
+		
+//		stmt.update("delete from cart where productId=? and userId=?",new Object[] {productId,userId,cartId});
 	}
 	
+	
+	public void addOneToCart(Integer cartId,Integer productId,Integer userId,Integer qty) {
+		
+		stmt.update("update cart set qty=? where cartId =? and userId=? and productId=?",new Object[] {qty+1,cartId,userId,productId});
+		
+	}
 	
 }
