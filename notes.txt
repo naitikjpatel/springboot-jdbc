@@ -250,3 +250,12 @@ call dao's method from controller
 
 
 ----------------------------------------------------------------
+
+
+Now we add the functionality of the mail sender
+ail -> send -> 
+	//we need to add the dependancy of the java mail api
+	1) java mail api -> pom.xml  { spring starter , maven } 
+
+
+
